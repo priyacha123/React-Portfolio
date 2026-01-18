@@ -21,9 +21,9 @@ const About = () => {
                     always excited to build something meaningful.</p>
             </div>
             <div className="right-about mt-5 border-3 mr-5  border-black">
-                {/* <!-- image --> */}
                  <div className="box">
                     <div className="top">
+                <img src="/about2.png" alt="" />
                         {/* image */}
                     </div>
                     <div className="bottom">
@@ -32,7 +32,7 @@ const About = () => {
                             +91 8595357924</p>
                         <p className='flex items-center gap-1'>
                             <MdEmail />
-                            chaudhary21priya@gmail.com</p>
+                            priya0903kumari@gmail.com</p>
                         <a href="https://www.linkedin.com/in/priya-kumari-frontend-developer/" target="_blank">
                             <p className='flex items-center gap-1'>
                                 <BsLinkedin />
