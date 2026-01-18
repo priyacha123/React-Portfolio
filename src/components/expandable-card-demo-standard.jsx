@@ -36,12 +36,13 @@ export default function ExpandableCardDemo() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 h-full w-full z-10" />
+            className="fixed inset-0 bg-black/20 h-full w-full z-10"
+          />
         )}
       </AnimatePresence>
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0  grid place-items-center z-[100]">
+          <div className="fixed inset-0  grid place-items-center z-100">
             <motion.button
               key={`button-${active.title}-${id}`}
               layout
@@ -58,20 +59,23 @@ export default function ExpandableCardDemo() {
                 },
               }}
               className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
-              onClick={() => setActive(null)}>
+              onClick={() => setActive(null)}
+            >
               <CloseIcon />
             </motion.button>
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden">
+              className="w-full max-w-125 h-150 md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+            >
               <motion.div layoutId={`image-${active.title}-${id}`}>
                 <img
                   width={200}
                   height={200}
                   src={active.src}
                   alt={active.title}
-                  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top" />
+                  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                />
               </motion.div>
 
               <div>
@@ -79,12 +83,14 @@ export default function ExpandableCardDemo() {
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-bold text-neutral-700 dark:text-neutral-200">
+                      className="font-bold text-neutral-700 dark:text-neutral-200"
+                    >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400">
+                      className="text-neutral-600 dark:text-neutral-400"
+                    >
                       {active.description}
                     </motion.p>
                   </div>
@@ -93,7 +99,8 @@ export default function ExpandableCardDemo() {
                     layoutId={`button-${active.title}-${id}`}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white">
+                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
+                  >
                     {active.ctaText}
                   </motion.a>
                 </div>
@@ -103,7 +110,8 @@ export default function ExpandableCardDemo() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]">
+                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                  >
                     {typeof active.content === "function"
                       ? active.content()
                       : active.content}
@@ -114,38 +122,45 @@ export default function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
+
+
       <ul className="max-w-2xl mx-auto w-full gap-4">
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer">
-            <div className="flex gap-4 flex-col md:flex-row ">
+            className="p-4 flex flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+          >
+            <div className="flex gap-4 flex-row ">
               <motion.div layoutId={`image-${card.title}-${id}`}>
                 <img
                   width={100}
                   height={100}
                   src={card.src}
                   alt={card.title}
-                  className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top" />
+                  className="h-14 w-14 rounded-lg object-cover object-top"
+                />
               </motion.div>
               <div className="">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left">
+                  className="font-medium text-neutral-800 dark:text-neutral-200 text-left"
+                >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left">
+                  className="text-neutral-600 dark:text-neutral-400 text-left"
+                >
                   {card.description}
                 </motion.p>
               </div>
             </div>
             <motion.button
               layoutId={`button-${card.title}-${id}`}
-              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0">
+              className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-0"
+            >
               {card.ctaText}
             </motion.button>
           </motion.div>
@@ -179,7 +194,8 @@ export const CloseIcon = () => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="h-4 w-4 text-black">
+      className="h-4 w-4 text-black"
+    >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M18 6l-12 12" />
       <path d="M6 6l12 12" />
@@ -189,108 +205,151 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "Lana Del Rey",
-    title: "Summertime Sadness",
-    src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
+    description: "AI Short Video Generator",
+    title: "Clip Crafter AI",
+    src: "/public/clipcrafter.png",
+    ctaText: "View Details",
+    ctaLink: "https://clip-crafter-ai.vercel.app/",
     content: () => {
       return (
-        <p>Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-                    her melancholic and cinematic music style. Born Elizabeth Woolridge
-                    Grant in New York City, she has captivated audiences worldwide with
-                    her haunting voice and introspective lyrics. <br /> <br />Her songs
-                    often explore themes of tragic romance, glamour, and melancholia,
-                    drawing inspiration from both contemporary and vintage pop culture.
-                    With a career that has seen numerous critically acclaimed albums, Lana
-                    Del Rey has established herself as a unique and influential figure in
-                    the music industry, earning a dedicated fan base and numerous
-                    accolades.
-                  </p>
+        <p>
+          Built an AI-powered short video generator that transforms text input
+          into fully rendered videos by automating the entire creation pipeline,
+          including script generation, voiceovers, captions, images, and final
+          video composition. The system delivers an end-to-end, hands-free media
+          generation experience, enabling users to quickly produce engaging
+          short-form video content from simple text prompts.
+          <br /> <br />
+          Integrated multiple AI services such as Gemini, Google Text-to-Speech,
+          AssemblyAI, ClipDrop, and Remotion through an asynchronous processing
+          pipeline to ensure smooth media generation, processing, and storage.
+          Designed a scalable full-stack architecture using Next.js, Clerk for
+          authentication, Neon PostgreSQL with Drizzle ORM, and Firebase Storage
+          to support secure user management, reliable data handling, and
+          efficient asset storage.
+        </p>
       );
     },
   },
   {
-    description: "Babbu Maan",
-    title: "Mitran Di Chhatri",
-    src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
-    ctaText: "Play",
+    description: "AI Trip Planner",
+    title: "Voyage Tour",
+    src: "/public/trip-planner.png",
+    ctaText: "View Details",
+    ctaLink: "https://ai-trip-planner-mu.vercel.app/",
+    content: () => {
+      return (
+        <p>
+          Built an AI-powered Trip Planner using React, integrating the Google
+          Places Autocomplete API for seamless location search and the Gemini
+          API to generate personalized, structured JSON-based travel itineraries
+          with hotel recommendations and detailed day-wise plans. The
+          application delivers complete travel insights, helping users plan
+          trips efficiently with AI-driven suggestions.
+          <br /> <br />
+          Implemented an interactive mapping system that allows users to
+          navigate directly from itinerary items to live maps, displaying exact
+          locations of destinations. Enhanced the experience by presenting rich
+          trip details, including images, ratings, and optimized visiting
+          schedules, enabling users to visualize and explore their travel plans
+          more effectively.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Photo Editing Website",
+    title: "Gallery Vault",
+    src: "/public/gallery-vault.png",
+    ctaText: "View Details",
+    ctaLink: "https://gallery-vault-lake.vercel.app/",
+    content: () => {
+      return (
+        <p>
+          Developed a Next.js and TypeScript–based photo editing web application
+          that supports camera capture and a wide range of AI-powered image
+          transformations, including generative fill, background removal, image
+          enhancement, and advanced visual effects. The application provides an
+          interactive and intuitive editing experience, enabling users to create
+          and modify images directly within the browser.
+          <br /> <br />
+          Integrated Cloudinary using next-cloudinary for real-time image
+          processing, secure cloud storage, and optimized media delivery of all
+          user-generated content. Implemented comprehensive media management
+          features such as photo liking, favorites collections, and album
+          creation/deletion, significantly improving user engagement and
+          ensuring organized, scalable asset handling.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Recipe Generator",
+    title: "Chef Claude",
+    src: "/public/chef-claude.png",
+    ctaText: "View Details",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
-        <p>Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-                    voice and profound lyrics that resonate deeply with his audience. Born
-                    in the village of Khant Maanpur in Punjab, India, he has become a
-                    cultural icon in the Punjabi music industry. <br /> <br />His songs
-                    often reflect the struggles and triumphs of everyday life, capturing
-                    the essence of Punjabi culture and traditions. With a career spanning
-                    over two decades, Babu Maan has released numerous hit albums and
-                    singles that have garnered him a massive fan following both in India
-                    and abroad.
-                  </p>
+        <p>
+          Created a recipe generator web application using React that generates
+          recipes through the Hugging Face API based on user-provided
+          ingredients. The system enforces a minimum of five ingredients to
+          ensure more accurate and meaningful recipe generation.
+          <br /> <br />
+          Designed an intuitive user interface that guides users to input
+          ingredients and instantly receive AI-generated recipes. The project
+          highlights effective API integration, input validation, and dynamic
+          rendering of AI-driven content within a React-based frontend.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Meme Creation Website",
+    title: "Meme Generator",
+    src: "/public/meme-generator.png",
+    ctaText: "View Details",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Developed a simple and interactive Meme Generator using React that
+          fetches trending meme templates from a public Meme API. The
+          application allows users to customize memes by adding top and bottom
+          text, making meme creation quick and user-friendly.
+          <br /> <br />
+          Implemented features to download the final meme as a .jpg file and
+          styled the interface using Tailwind CSS for a clean, responsive
+          design. The project demonstrates practical API integration, state
+          management, and dynamic UI updates in a modern React workflow.
+        </p>
       );
     },
   },
 
   {
-    description: "Metallica",
-    title: "For Whom The Bell Tolls",
-    src: "https://assets.aceternity.com/demos/metallica.jpeg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
+    description: "Expense Tracker",
+    title: "Savoneyy",
+    src: "/public/savoneyy.png",
+    ctaText: "View Details",
+    ctaLink: "https://savoneyy.vercel.app/",
     content: () => {
       return (
-        <p>Metallica, an iconic American heavy metal band, is renowned for their
-                    powerful sound and intense performances that resonate deeply with
-                    their audience. Formed in Los Angeles, California, they have become a
-                    cultural icon in the heavy metal music industry. <br /> <br />Their
-                    songs often reflect themes of aggression, social issues, and personal
-                    struggles, capturing the essence of the heavy metal genre. With a
-                    career spanning over four decades, Metallica has released numerous hit
-                    albums and singles that have garnered them a massive fan following
-                    both in the United States and abroad.
-                  </p>
-      );
-    },
-  },
-  {
-    description: "Led Zeppelin",
-    title: "Stairway To Heaven",
-    src: "https://assets.aceternity.com/demos/led-zeppelin.jpeg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>Led Zeppelin, a legendary British rock band, is renowned for their
-                    innovative sound and profound impact on the music industry. Formed in
-                    London in 1968, they have become a cultural icon in the rock music
-                    world. <br /> <br />Their songs often reflect a blend of blues, hard
-                    rock, and folk music, capturing the essence of the 1970s rock era.
-                    With a career spanning over a decade, Led Zeppelin has released
-                    numerous hit albums and singles that have garnered them a massive fan
-                    following both in the United Kingdom and abroad.
-                  </p>
-      );
-    },
-  },
-  {
-    description: "Mustafa Zahid",
-    title: "Toh Phir Aao",
-    src: "https://assets.aceternity.com/demos/toh-phir-aao.jpeg",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>"Aawarapan", a Bollywood movie starring Emraan Hashmi, is
-                    renowned for its intense storyline and powerful performances. Directed
-                    by Mohit Suri, the film has become a significant work in the Indian
-                    film industry. <br /> <br />The movie explores themes of love,
-                    redemption, and sacrifice, capturing the essence of human emotions and
-                    relationships. With a gripping narrative and memorable music,
-                    "Aawarapan" has garnered a massive fan following both in
-                    India and abroad, solidifying Emraan Hashmi's status as a
-                    versatile actor.
-                  </p>
+        <p>
+          Developed Savoney, a personal finance management web application built
+          with JavaScript that enables users to track income, expenses, and
+          budgets through an interactive dashboard. The application provides
+          real-time insights by displaying total income, total expenses, and
+          remaining balance, helping users better understand and manage their
+          finances.
+          <br /> <br />
+          Implemented features to add and manage income sources, categorize and
+          track expenses, and define budgets with automatic balance
+          calculations. Enhanced the user experience with clean, responsive UI
+          design and interactive charts that visually represent income and
+          expense data for clear and effective financial analysis.
+        </p>
       );
     },
   },

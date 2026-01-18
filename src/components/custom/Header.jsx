@@ -6,7 +6,7 @@ const Header = () => {
      <section className="home w-full h-screen" id="home">
         <header className='fixed z-10 w-full bg-gray-400 text-white border-b-3 border-b-black-700 flex justify-between items-center'> 
                 <div className='ml-20'>
-                    <h1 className="font-bold text-4xl ">DEVELOPER</h1>
+                    <h1 className="font-bold md:text-4xl sm:text-3xl ">DEVELOPER</h1>
                 </div>
                 <div>
                     <ul className="flex flex-row gap-10 mr-15 text-lg font-medium ">
@@ -19,8 +19,8 @@ const Header = () => {
         </header>
         <main>
             <div className="hero">
-                <div className="left-hero">
-                    <span>PORTFOLIO</span>
+                <div className="left-hero text-center">
+                    <span className=" lg:text-9xl sm:text-7xl md:text-8xl text-6xl  font-bold">PORTFOLIO</span>
                     {/* <img src="photos/home.png" alt="" /> */}
                     {/* <!-- name --> */}
                      {/* <h2>Welcome to my Portfolio</h2>

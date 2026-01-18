@@ -23,6 +23,7 @@ section {
 .home {
   width: 100%;
   height: 100vh;
+  overflow: hidden;
   /* background-color: rgb(159, 105, 34); */
   /* border-left: 5px solid #000; */
 }
@@ -68,7 +69,7 @@ main {
   font-weight: 400;
   font-style: normal;
   bottom: 45%;
-  font-size: 170px;
+  /* font-size: 170px; */
   color: black;
 }
 
@@ -101,52 +102,17 @@ main {
 .about {
   width: 100%;
   height: 100vh;
-  /* background-color: rgba(38, 71, 53, 0.795); */
 }
 
-.info {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  gap: 50px;
-  padding: 0 50px;
-  /* color: white; */
-  color: black;
-
-}
-
-.left-about {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
-  font-size: 20px;
-}
-
-.left-about span {
-  font-size: 60px;
-  font-weight: bold;
-}
 .about-name {
   font-size: 30px;
   font-weight: bold;
 }
 
-.right-about {
-  margin-right: 7%;
-  width: 70%;
-  height: 62%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 7px;
-  border: 2px solid black;
-}
 .right-about .box {
-  width: 300px;
+  width: 350px;
   height: 500px;
+  margin: 4px;
   position: relative;
   perspective: 1000px;
   
@@ -183,11 +149,17 @@ main {
 }
 
 /* ================================================================project section===================================================== */
+.projects {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
 
 /* ================================================================contact section===================================================== */
 .contact {
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 }
 
 .contact-details {
@@ -198,34 +170,14 @@ main {
   height: 100%;
 }
 
-.contact-details h1 {
-  margin-bottom: 10px;
-  font-size: 60px;
-}
-
-.contact-details h3 {
-  font-size: 25px;
-  margin-bottom: 25px;
-}
-
 .basic {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-}
-
-.name,
-.email {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
 }
 
 form input {
-  width: 300px;
+  width: 400px;
   padding: 10px;
   margin-bottom: 20px;
   background-color: black;

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useId, useRef, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
 export default function ExpandableCardDemoGrid() {
@@ -41,7 +41,7 @@ export default function ExpandableCardDemoGrid() {
       </AnimatePresence>
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0  grid place-items-center z-[100]">
+          <div className="fixed inset-0  grid place-items-center z-100">
             <motion.button
               key={`button-${active.title}-${id}`}
               layout
@@ -118,7 +118,7 @@ export default function ExpandableCardDemoGrid() {
         ) : null}
       </AnimatePresence>
       <ul
-        className="max-w-2xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4">
+        className="max-w-full mx-auto w-full grid grid-cols-1 md:grid-cols-3 items-start gap-4">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
@@ -188,88 +188,151 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "Lana Del Rey",
-    title: "Summertime Sadness",
-    src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
-    ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
+    description: "AI Short Video Generator",
+    title: "Clip Crafter AI",
+    src: "/public/clipcrafter.png",
+    ctaText: "View Details",
+    ctaLink: "https://clip-crafter-ai.vercel.app/",
     content: () => {
       return (
-        <p>Lana Del Rey, an iconic American singer-songwriter, is celebrated for
-                    her melancholic and cinematic music style. Born Elizabeth Woolridge
-                    Grant in New York City, she has captivated audiences worldwide with
-                    her haunting voice and introspective lyrics. <br /> <br />Her songs
-                    often explore themes of tragic romance, glamour, and melancholia,
-                    drawing inspiration from both contemporary and vintage pop culture.
-                    With a career that has seen numerous critically acclaimed albums, Lana
-                    Del Rey has established herself as a unique and influential figure in
-                    the music industry, earning a dedicated fan base and numerous
-                    accolades.
-                  </p>
+        <p>
+          Built an AI-powered short video generator that transforms text input
+          into fully rendered videos by automating the entire creation pipeline,
+          including script generation, voiceovers, captions, images, and final
+          video composition. The system delivers an end-to-end, hands-free media
+          generation experience, enabling users to quickly produce engaging
+          short-form video content from simple text prompts.
+          <br /> <br />
+          Integrated multiple AI services such as Gemini, Google Text-to-Speech,
+          AssemblyAI, ClipDrop, and Remotion through an asynchronous processing
+          pipeline to ensure smooth media generation, processing, and storage.
+          Designed a scalable full-stack architecture using Next.js, Clerk for
+          authentication, Neon PostgreSQL with Drizzle ORM, and Firebase Storage
+          to support secure user management, reliable data handling, and
+          efficient asset storage.
+        </p>
       );
     },
   },
   {
-    description: "Babbu Maan",
-    title: "Mitran Di Chhatri",
-    src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
-    ctaText: "Visit",
+    description: "AI Trip Planner",
+    title: "Voyage Tour",
+    src: "/public/trip-planner.png",
+    ctaText: "View Details",
+    ctaLink: "https://ai-trip-planner-mu.vercel.app/",
+    content: () => {
+      return (
+        <p>
+          Built an AI-powered Trip Planner using React, integrating the Google
+          Places Autocomplete API for seamless location search and the Gemini
+          API to generate personalized, structured JSON-based travel itineraries
+          with hotel recommendations and detailed day-wise plans. The
+          application delivers complete travel insights, helping users plan
+          trips efficiently with AI-driven suggestions.
+          <br /> <br />
+          Implemented an interactive mapping system that allows users to
+          navigate directly from itinerary items to live maps, displaying exact
+          locations of destinations. Enhanced the experience by presenting rich
+          trip details, including images, ratings, and optimized visiting
+          schedules, enabling users to visualize and explore their travel plans
+          more effectively.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Photo Editing Website",
+    title: "Gallery Vault",
+    src: "/public/gallery-vault.png",
+    ctaText: "View Details",
+    ctaLink: "https://gallery-vault-lake.vercel.app/",
+    content: () => {
+      return (
+        <p>
+          Developed a Next.js and TypeScript–based photo editing web application
+          that supports camera capture and a wide range of AI-powered image
+          transformations, including generative fill, background removal, image
+          enhancement, and advanced visual effects. The application provides an
+          interactive and intuitive editing experience, enabling users to create
+          and modify images directly within the browser.
+          <br /> <br />
+          Integrated Cloudinary using next-cloudinary for real-time image
+          processing, secure cloud storage, and optimized media delivery of all
+          user-generated content. Implemented comprehensive media management
+          features such as photo liking, favorites collections, and album
+          creation/deletion, significantly improving user engagement and
+          ensuring organized, scalable asset handling.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Recipe Generator",
+    title: "Chef Claude",
+    src: "/public/chef-claude.png",
+    ctaText: "View Details",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
-        <p>Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-                    voice and profound lyrics that resonate deeply with his audience. Born
-                    in the village of Khant Maanpur in Punjab, India, he has become a
-                    cultural icon in the Punjabi music industry. <br /> <br />His songs
-                    often reflect the struggles and triumphs of everyday life, capturing
-                    the essence of Punjabi culture and traditions. With a career spanning
-                    over two decades, Babu Maan has released numerous hit albums and
-                    singles that have garnered him a massive fan following both in India
-                    and abroad.
-                  </p>
+        <p>
+          Created a recipe generator web application using React that generates
+          recipes through the Hugging Face API based on user-provided
+          ingredients. The system enforces a minimum of five ingredients to
+          ensure more accurate and meaningful recipe generation.
+          <br /> <br />
+          Designed an intuitive user interface that guides users to input
+          ingredients and instantly receive AI-generated recipes. The project
+          highlights effective API integration, input validation, and dynamic
+          rendering of AI-driven content within a React-based frontend.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Meme Creation Website",
+    title: "Meme Generator",
+    src: "/public/meme-generator.png",
+    ctaText: "View Details",
+    ctaLink: "https://ui.aceternity.com/templates",
+    content: () => {
+      return (
+        <p>
+          Developed a simple and interactive Meme Generator using React that
+          fetches trending meme templates from a public Meme API. The
+          application allows users to customize memes by adding top and bottom
+          text, making meme creation quick and user-friendly.
+          <br /> <br />
+          Implemented features to download the final meme as a .jpg file and
+          styled the interface using Tailwind CSS for a clean, responsive
+          design. The project demonstrates practical API integration, state
+          management, and dynamic UI updates in a modern React workflow.
+        </p>
       );
     },
   },
 
   {
-    description: "Metallica",
-    title: "For Whom The Bell Tolls",
-    src: "https://assets.aceternity.com/demos/metallica.jpeg",
-    ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
+    description: "Expense Tracker",
+    title: "Savoneyy",
+    src: "/public/savoneyy.png",
+    ctaText: "View Details",
+    ctaLink: "https://savoneyy.vercel.app/",
     content: () => {
       return (
-        <p>Metallica, an iconic American heavy metal band, is renowned for their
-                    powerful sound and intense performances that resonate deeply with
-                    their audience. Formed in Los Angeles, California, they have become a
-                    cultural icon in the heavy metal music industry. <br /> <br />Their
-                    songs often reflect themes of aggression, social issues, and personal
-                    struggles, capturing the essence of the heavy metal genre. With a
-                    career spanning over four decades, Metallica has released numerous hit
-                    albums and singles that have garnered them a massive fan following
-                    both in the United States and abroad.
-                  </p>
-      );
-    },
-  },
-  {
-    description: "Lord Himesh",
-    title: "Aap Ka Suroor",
-    src: "https://assets.aceternity.com/demos/aap-ka-suroor.jpeg",
-    ctaText: "Visit",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>Himesh Reshammiya, a renowned Indian music composer, singer, and
-                    actor, is celebrated for his distinctive voice and innovative
-                    compositions. Born in Mumbai, India, he has become a prominent figure
-                    in the Bollywood music industry. <br /> <br />His songs often feature
-                    a blend of contemporary and traditional Indian music, capturing the
-                    essence of modern Bollywood soundtracks. With a career spanning over
-                    two decades, Himesh Reshammiya has released numerous hit albums and
-                    singles that have garnered him a massive fan following both in India
-                    and abroad.
-                  </p>
+        <p>
+          Developed Savoney, a personal finance management web application built
+          with JavaScript that enables users to track income, expenses, and
+          budgets through an interactive dashboard. The application provides
+          real-time insights by displaying total income, total expenses, and
+          remaining balance, helping users better understand and manage their
+          finances.
+          <br /> <br />
+          Implemented features to add and manage income sources, categorize and
+          track expenses, and define budgets with automatic balance
+          calculations. Enhanced the user experience with clean, responsive UI
+          design and interactive charts that visually represent income and
+          expense data for clear and effective financial analysis.
+        </p>
       );
     },
   },
