@@ -288,7 +288,7 @@ const cards = [
     title: "Chef Claude",
     src: "/public/chef-claude.png",
     ctaText: "View Details",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://chef-claude-smoky.vercel.app/",
     content: () => {
       return (
         <p>
@@ -310,7 +310,7 @@ const cards = [
     title: "Meme Generator",
     src: "/public/meme-generator.png",
     ctaText: "View Details",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://meme-generator-iota-liart.vercel.app/",
     content: () => {
       return (
         <p>

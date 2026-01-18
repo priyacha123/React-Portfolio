@@ -52,9 +52,6 @@ const Contact = () => {
             </form>
           </div>
         </div>
-          <div className="flex items-center justify-center p-4 bg-gray-800 text-white text-lg">
-            <h3>Made by Priya</h3>
-          </div>
       </section>
     </>
   );

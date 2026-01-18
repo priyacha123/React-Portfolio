@@ -190,7 +190,7 @@ const cards = [
   {
     description: "AI Short Video Generator",
     title: "Clip Crafter AI",
-    src: "/public/clipcrafter.png",
+    src: "/clipcrafter.png",
     ctaText: "View Details",
     ctaLink: "https://clip-crafter-ai.vercel.app/",
     content: () => {
@@ -217,7 +217,7 @@ const cards = [
   {
     description: "AI Trip Planner",
     title: "Voyage Tour",
-    src: "/public/trip-planner.png",
+    src: "/trip-planner.png",
     ctaText: "View Details",
     ctaLink: "https://ai-trip-planner-mu.vercel.app/",
     content: () => {
@@ -243,7 +243,7 @@ const cards = [
   {
     description: "Photo Editing Website",
     title: "Gallery Vault",
-    src: "/public/gallery-vault.png",
+    src: "/gallery-vault.png",
     ctaText: "View Details",
     ctaLink: "https://gallery-vault-lake.vercel.app/",
     content: () => {
@@ -269,9 +269,9 @@ const cards = [
   {
     description: "Recipe Generator",
     title: "Chef Claude",
-    src: "/public/chef-claude.png",
+    src: "/chef-claude.png",
     ctaText: "View Details",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://chef-claude-smoky.vercel.app/",
     content: () => {
       return (
         <p>
@@ -291,9 +291,9 @@ const cards = [
   {
     description: "Meme Creation Website",
     title: "Meme Generator",
-    src: "/public/meme-generator.png",
+    src: "/meme-generator.png",
     ctaText: "View Details",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://meme-generator-iota-liart.vercel.app/",
     content: () => {
       return (
         <p>
@@ -314,7 +314,7 @@ const cards = [
   {
     description: "Expense Tracker",
     title: "Savoneyy",
-    src: "/public/savoneyy.png",
+    src: "/savoneyy.png",
     ctaText: "View Details",
     ctaLink: "https://savoneyy.vercel.app/",
     content: () => {
