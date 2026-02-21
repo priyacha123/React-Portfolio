@@ -1,51 +1,53 @@
-import { BsGithub } from "react-icons/bs"
+import { BsGithub } from "react-icons/bs";
 
 const Header = () => {
   return (
-    <>
-     <section className="home w-full h-screen" id="home">
-        <header className='fixed z-10 w-full bg-gray-400 text-white border-b-3 border-b-black-700 flex justify-between items-center'> 
-                <div className='ml-20'>
-                    <h1 className="font-bold md:text-4xl sm:text-3xl ">DEVELOPER</h1>
-                </div>
-                <div>
-                    <ul className="flex flex-row gap-10 mr-15 text-lg font-medium ">
-                        <li className="hover:underline hover:text-xl"> <a href="#home">Home</a> </li>
-                        <li className="hover:underline hover:text-xl"> <a href="#about">About</a> </li>
-                        <li className="hover:underline hover:text-xl"> <a href="#projects">Projects</a> </li>
-                        <li className="hover:underline hover:text-xl"> <a href="#contact">Contact</a> </li>
-                    </ul>
-                </div>
-        </header>
-        <main>
-            <div className="hero">
-                <div className="left-hero text-center">
-                    <span className=" lg:text-9xl sm:text-7xl md:text-8xl text-6xl  font-bold">PORTFOLIO</span>
-                    {/* <img src="photos/home.png" alt="" /> */}
-                    {/* <!-- name --> */}
-                     {/* <h2>Welcome to my Portfolio</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p> */}
-                </div>
-                <div className="pl-25 right-hero">
-                    {/* <!-- photo --> */}
-                    {/* <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi commodi voluptatem repellendus molestiae aperiam quis ducimus deleniti, aut nobis quasi laboriosam dignissimos, error consectetur facere ut id. Pariatur, nulla veniam.</p> --> */}
-                    <p className="pb-5">"I build things at my own pace, 
-                        <br /> and it feels good 
-                        <br /> when they finally come together."</p>
-                    <a href="https://github.com/priyacha123" target="_blank">
-                        
-                        <p className="flex gap-1 items-center pb-7 text-lg font-semibold hover:underline hover:text-xl">
-                            <BsGithub />
-                            priyacha123
-                            </p>
-                    </a>
+    <main id="home" className="min-h-screen flex flex-col justify-between bg-white text-black px-6 md:px-16">
 
-                </div>
-            </div>
-        </main>
-    </section>
-    </>
-  )
-}
+      <div className="flex flex-col items-center justify-center flex-1 gap-4 text-center">
 
-export default Header
+        <img 
+          src="/2026-2.png" 
+          alt="Top Design" 
+          className="w-32 md:w-40 opacity-90 pt-10"
+        />
+
+        <span className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-widest font-serif">
+          PORTFOLIO
+        </span>
+
+        <img 
+          src="about2.png" 
+          alt="PostFolio"
+          className="w-70 md:w-76 hover:scale-105 transition duration-300 rounded-full shadow-lg cursor-pointer bg-amber-100"
+        />
+
+      </div>
+
+      <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6 pb-10 border-t border-black/10 pt-2 ">
+
+        <p className="text-sm md:text-base text-gray-700 leading-relaxed text-center md:text-left">
+          “I build things at my own pace,
+          <br />
+          and it feels good
+          <br />
+          when they finally come together.”
+        </p>
+
+        <a
+          href="https://github.com/priyacha123"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-base md:text-lg font-semibold transition duration-300 hover:scale-105 hover:opacity-70 border-2 border-gray-800 rounded-lg px-4 py-2"
+        >
+          <BsGithub size={20} />
+          priyacha123
+        </a>
+
+      </div>
+
+    </main>
+  );
+};
+
+export default Header;

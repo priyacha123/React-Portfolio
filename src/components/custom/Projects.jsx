@@ -1,22 +1,31 @@
-import React from 'react'
-import ExpandableCardDemo from '../expandable-card-demo-standard'
-import ExpandableCardDemoGrid from '../expandable-card-demo-grid'
+import React from "react";
+import ExpandableCardDemo from "../ui/expandable-card-demo-standard";
+import ExpandableCardDemoGrid from "../ui/expandable-card-demo-grid";
 
 const Projects = () => {
   return (
-    <>
-     <section id="projects" className='projects w-full h-full flex flex-col justify-center items-center gap-10 '>
-        <h2 className='text-7xl font-bold underline pt-25'>My Projects</h2>
-        <div className='hidden md:block w-full h-full gap-10'>
-            <ExpandableCardDemoGrid />
+    <section id="projects" className=" w-full px-6 py-20 md:px-16 bg-[#f8fafc]">
+
+      <div className="text-center mb-16">
+        <h2 className="text-5xl md:text-6xl font-bold text-gray-900">
+          My Projects
+        </h2>
+
+        <div className="w-20 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+      </div>
+
+      <div className="max-w-8xl mx-auto">
+        <div className="hidden md:block">
+          <ExpandableCardDemoGrid />
         </div>
-        <div className='block md:hidden w-full h-full gap-10'>
-            <ExpandableCardDemo />
+
+        <div className="block md:hidden">
+          <ExpandableCardDemo />
         </div>
+      </div>
 
     </section>
-    </>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;
