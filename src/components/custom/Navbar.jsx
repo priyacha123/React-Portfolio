@@ -16,7 +16,7 @@ const Navbar = () => {
             <li key={item} className="relative group cursor-pointer">
               <a
                 href={`#${item.toLowerCase()}`}
-                className="transition duration-300 group-hover:text-white"
+                className="transition duration-300 hover:text-lg"
               >
                 {item}
               </a>
