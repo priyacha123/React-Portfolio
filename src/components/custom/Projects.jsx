@@ -62,7 +62,7 @@ const PROJECTS = [
     year: "2026", 
     accent: "#f5a623",
     src: "/gallery-vault.png",
-    stack: ["React", "TypeScript", "Tailwind"],
+    stack: ["Next.js", "TypeScript", "Tailwind", "Cloudinary"],
     github: "https://github.com/priyacha123/Gallery-Vault",
     live: "https://gallery-vault-lake.vercel.app/",
     description: 
@@ -72,14 +72,13 @@ const PROJECTS = [
           enhancement, and advanced visual effects. The application provides an
           interactive and intuitive editing experience, enabling users to create
           and modify images directly within the browser.
-          <br /> <br />
+
           Integrated Cloudinary using next-cloudinary for real-time image
           processing, secure cloud storage, and optimized media delivery of all
           user-generated content. Implemented comprehensive media management
           features such as photo liking, favorites collections, and album
           creation/deletion, significantly improving user engagement and
-          ensuring organized, scalable asset handling. 
-          </p>`
+          ensuring organized, scalable asset handling. `
   },
   {
     id: "04",
@@ -88,7 +87,7 @@ const PROJECTS = [
     year: "2026", 
     accent: "#f5a623",
     src: "/chef-claude.png",
-    stack: ["React", "TypeScript", "Tailwind"],
+    stack: ["React", "Hugging Face API", "Tailwind"],
     github: "https://github.com/priyacha123/Chef-Claude",
     live: "https://chef-claude-smoky.vercel.app/",
     description: 
@@ -96,17 +95,7 @@ const PROJECTS = [
           recipes through the Hugging Face API based on user-provided
           ingredients. The system enforces a minimum of five ingredients to
           ensure more accurate and meaningful recipe generation.
-          <br /> <br />
-          Designed an intuitive user interface that guides users to input
-          ingredients and instantly receive AI-generated recipes. The project
-          highlights effective API integration, input validation, and dynamic
-          rendering of AI-driven content within a React-based frontend.
-          <br /> <br />
-          Created a recipe generator web application using React that generates
-          recipes through the Hugging Face API based on user-provided
-          ingredients. The system enforces a minimum of five ingredients to
-          ensure more accurate and meaningful recipe generation.
-          <br /> <br />
+          
           Designed an intuitive user interface that guides users to input
           ingredients and instantly receive AI-generated recipes. The project
           highlights effective API integration, input validation, and dynamic
@@ -119,7 +108,7 @@ const PROJECTS = [
     year: "2026", 
     accent: "#f5a623",  
     src: "/meme-generator.png",
-    stack: ["React", "TypeScript", "Tailwind"],
+    stack: ["React", "TypeScript", "Tailwind", "Public Meme API"],
     github: "https://github.com/priyacha123/Meme-Generator",
     live: "https://meme-generator-iota-liart.vercel.app/",
     description: 
@@ -127,17 +116,7 @@ const PROJECTS = [
           fetches trending meme templates from a public Meme API. The
           application allows users to customize memes by adding top and bottom
           text, making meme creation quick and user-friendly.
-          <br /> <br />
-          Implemented features to download the final meme as a .jpg file and
-          styled the interface using Tailwind CSS for a clean, responsive
-          design. The project demonstrates practical API integration, state
-          management, and dynamic UI updates in a modern React workflow. 
-          <br /> <br />
-          Developed a simple and interactive Meme Generator using React that
-          fetches trending meme templates from a public Meme API. The
-          application allows users to customize memes by adding top and bottom
-          text, making meme creation quick and user-friendly.
-          <br /> <br />
+          
           Implemented features to download the final meme as a .jpg file and
           styled the interface using Tailwind CSS for a clean, responsive
           design. The project demonstrates practical API integration, state
@@ -151,9 +130,9 @@ const PROJECTS = [
     year: "2026", 
     accent: "#f5a623",  
     src: "/savoneyy.png",
-    stack: ["React", "TypeScript", "Tailwind"],
+    stack: ["HTML", "JavaScript", "CSS"],
     github: "https://github.com/priyacha123/Savoneyy",
-    live: "https://savoneyy.vercel.app/",
+    live: "https://savoneyy.vercel.app/", 
     description: 
           ` Developed Savoney, a personal finance management web application built
           with JavaScript that enables users to track income, expenses, and
@@ -161,7 +140,7 @@ const PROJECTS = [
           real-time insights by displaying total income, total expenses, and
           remaining balance, helping users better understand and manage their
           finances.
-          <br /> <br />
+
           Implemented features to add and manage income sources, categorize and
           track expenses, and define budgets with automatic balance
           calculations. Enhanced the user experience with clean, responsive UI
@@ -372,6 +351,7 @@ const ProjectRow = ({ project, index, isOpen, onToggle }) => {
             <div style={{ display: "flex", gap: "1rem" }}>
               <a
                 href={project.live}
+                target= "_blank"
                 style={{
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: "0.78rem",
@@ -397,17 +377,18 @@ const ProjectRow = ({ project, index, isOpen, onToggle }) => {
               </a>
               <a
                 href={project.github}
+                target="_blank"
                 style={{
                   fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: "0.78rem",
+                  fontSize: "0.78rem", 
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.4)",
+                  color: project.accent,
                   textDecoration: "none",
                   padding: "0.45rem 1.2rem",
-                  border: "1px solid rgba(43, 29, 20, 0.15)",
+                  border: `1px solid ${project.accent}`,
                   borderRadius: "2px",
-                  transition: "border-color 0.2s, color 0.2s",
+                  transition: "background 0.2s, color 0.2s",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = "rgba(43, 29, 20, 0.4)";
